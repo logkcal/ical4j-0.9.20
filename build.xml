@@ -18,7 +18,7 @@
     <property name="test.source.dir" location="test"/>
     <property name="output.dir" location="bin"/>
     <property name="package.dir" location="build"/>
-    <property name="package.file" value="ical4j.jar"/>
+    <property name="package.file" value="ical4j-0.9.20-PATCHED.jar"/>
     <property name="javadoc.dir" location="docs/api"/>
     <property name="javadoc.packages" value="net.fortuna.ical4j.*"/>
     <property name="dist.dir" location=".."/>

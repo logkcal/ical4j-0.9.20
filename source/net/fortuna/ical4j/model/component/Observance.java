@@ -149,7 +149,9 @@ public abstract class Observance extends Component implements Comparable {
      * observance onset for the specified date
      */
     public final Date getLatestOnset(final Date date) {
-        Date initialOnset = ((DtStart) getProperty(Property.DTSTART)).getDate();
+        // The initial on-set will be '16010101T090000 GMT' if '16010101T020000' DTSTART and  '-700' offset were given.
+        DtStart dtStart = (DtStart) getProperty(Property.DTSTART);
+        Date initialOnset = new DateTime(dtStart.getDate().getTime() - getOffsetFrom().getOffset().getOffset());
         
         // observance not applicable if date is before the effective date of this observance..
         if (date.before(initialOnset)) {
